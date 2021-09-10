@@ -1,0 +1,19 @@
+@import "./src/assets/styles/variebles.scss";
+@import "./src/assets/styles/mixins.scss";
+
+.buttonFilter {
+  @include flexBox(row, center, center, nowrap);
+  width: 26px;
+  height: 26px;
+  cursor: pointer;
+
+  .filterImg {
+    width: 26px;
+    height: 26px;
+  }
+
+  .defaultFilterImg {
+    width: 20px;
+    height: 20px;
+  }
+}
