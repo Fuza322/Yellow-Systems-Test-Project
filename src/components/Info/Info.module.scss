@@ -1,2 +1,34 @@
 @import "./src/assets/styles/variebles.scss";
 @import "./src/assets/styles/mixins.scss";
+
+.infoBlock {
+  @include flexBox(row, center, center, nowrap);
+  margin: 85px 0 0;
+
+  .infoContainer {
+    @include flexBox(column, center, flex-start, nowrap);
+    width: 614px;
+
+    .infoTitle {
+      @include text(sans-serif, 36px, 500, $primaryColor);
+      font-weight: bold;
+      font-stretch: normal;
+      font-style: normal;
+      line-height: normal;
+      letter-spacing: normal;
+      text-align: center;
+      text-transform: uppercase;
+      margin: 0 0 15px 0;
+    }
+
+    .infoText {
+      @include text(sans-serif, 14px, 500, $greyTextColor);
+      font-weight: normal;
+      font-stretch: normal;
+      font-style: normal;
+      line-height: 1.71;
+      letter-spacing: normal;
+      margin: 0 0 30px 0;
+    }
+  }
+}

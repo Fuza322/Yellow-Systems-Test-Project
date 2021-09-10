@@ -13,8 +13,8 @@ function App() {
             <Header/>
             <Switch>
                 <Route exact path={"/"} render={() => <Main/>}/>
-                <Route exact path={"/login"} render={() => <Login/>}/>
-                <Route exact path={"/info"} render={() => <Info/>}/>
+                <Route path={"/login"} render={() => <Login/>}/>
+                <Route path={"/info"} render={() => <Info/>}/>
                 <Route path={"/404"} render={() => <PageNotFound/>}/>
                 <Redirect from={"*"} to={"/404"}/>
             </Switch>
