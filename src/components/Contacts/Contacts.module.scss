@@ -1,0 +1,37 @@
+@import "./src/assets/styles/variebles.scss";
+@import "./src/assets/styles/mixins.scss";
+
+.contactsBlock {
+  @include flexBox(row, center, center, nowrap);
+  width: 100%;
+  margin: 85px 0 0;
+
+  .contactsContainer {
+    @include flexBox(column, center, flex-start, nowrap);
+    width: 70%;
+
+    .contactsTitle {
+      @include text(sans-serif, 36px, 500, $primaryColor);
+      text-align: center;
+      font-weight: bold;
+      text-transform: uppercase;
+      margin: 0 0 15px 0;
+    }
+
+    .contactsText {
+      @include text(sans-serif, 14px, 500, $greyTextColor);
+      line-height: 1.71;
+      margin: 0 0 10px 0;
+
+      .contactsHelpText {
+        font-weight: bold;
+
+        .contactsValue {
+          @include text(sans-serif, 14px, 500, $blackTextColor);
+          font-weight: normal;
+          text-decoration: underline;
+        }
+      }
+    }
+  }
+}

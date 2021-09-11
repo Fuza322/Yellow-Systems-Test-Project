@@ -15,17 +15,4 @@
       height: 100%;
     }
   }
-
-  .headerNavContainer {
-    @include flexBox(row, space-between, center, nowrap);
-    width: 350px;
-
-    .headerNavItem {
-      @include text(sans-serif, 14px, 500, $whiteTextColor);
-      height: 16px;
-      text-align: center;
-      font-weight: bold;
-      text-transform: uppercase;
-    }
-  }
 }

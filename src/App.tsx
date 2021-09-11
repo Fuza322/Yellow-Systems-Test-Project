@@ -6,6 +6,7 @@ import {Login} from "./components/Login/Login"
 import {Info} from "./components/Info/Info"
 import {EditAndAddJog} from "./components/EditAndAddJog/EditAndAddJog"
 import {PageNotFound} from "./components/PageNotFound/PageNotFound"
+import {Contacts} from "./components/Contacts/Contacts"
 
 function App() {
     return (
@@ -17,6 +18,7 @@ function App() {
                 <Route path={"/info"} render={() => <Info/>}/>
                 <Route path={"/editjog"} render={() => <EditAndAddJog/>}/>
                 <Route path={"/addjog"} render={() => <EditAndAddJog/>}/>
+                <Route path={"/contacts"} render={() => <Contacts/>}/>
                 <Route path={"/404"} render={() => <PageNotFound/>}/>
                 <Redirect from={"*"} to={"/404"}/>
             </Switch>

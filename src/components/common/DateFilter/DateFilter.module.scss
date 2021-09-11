@@ -20,7 +20,7 @@
     }
 
     .dateFilterInput {
-      @include inputAndTextArea(100px, 31px, 13px, solid 1px $greyTextColor, solid 1px $greyTextColor);
+      @include inputAndTextArea(100px, 31px, 13px, $blackTextColor, solid 1px $greyTextColor);
       border-radius: 11px;
       padding: 5px;
     }
