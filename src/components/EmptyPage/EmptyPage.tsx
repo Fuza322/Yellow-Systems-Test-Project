@@ -13,10 +13,11 @@ export const EmptyPage = React.memo((props: EmptyPagePropsType) => {
                     <img src={nothingIsThereImg} alt="nothingIsThereImg" className={style.nothingIsThereImg}/>
                 </div>
                 <span className={style.nothingIsThereText}>Nothing is there</span>
-                <div className={style.buttonContaner}>
+                <div className={style.buttonContainer}>
                     <Button
                         type={"button"}
                         title={"Create your jog first"}
+                        onClick={() => {console.log("CreateFirstJogButton was Clicked")}}
                         className={style.createFirstJogButton}
                     />
                 </div>

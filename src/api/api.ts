@@ -11,6 +11,7 @@ export const authAPI = {
         return instance.post<any>(`auth/uuidLogin`, {uuid: "hello"})
             .then((res) => {
                 //localStorage.setItem("")
+                console.log(res)
                 return res
             })
     },

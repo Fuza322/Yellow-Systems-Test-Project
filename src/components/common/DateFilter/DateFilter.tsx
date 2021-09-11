@@ -5,7 +5,7 @@ type DateFilterPropsType = {}
 
 export const DateFilter = React.memo((props: DateFilterPropsType) => {
     return (
-        <div className={style.dateFilterContaner}>
+        <div className={style.dateFilterContainer}>
             <div className={style.dateFilterItem}>
                 <span className={style.dateFilterHelpText}>Date from</span>
                 <input type={"number"} className={style.dateFilterInput}/>

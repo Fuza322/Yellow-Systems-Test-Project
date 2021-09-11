@@ -1,4 +1,5 @@
-import React from "react"
+import React, {useCallback} from "react"
+import {useHistory} from "react-router-dom"
 import {Button} from "../common/Buttons/Button/Button"
 import {ButtonCancel} from "../common/Buttons/ButtonCancel/ButtonCancel"
 import style from "./EditAndAddJog.module.scss"
@@ -6,6 +7,13 @@ import style from "./EditAndAddJog.module.scss"
 type EditAndAddJogPropsType = {}
 
 export const EditAndAddJog = React.memo((props: EditAndAddJogPropsType) => {
+
+    const history = useHistory()
+
+    const onCancelButtonClickHandler = useCallback(() => {
+        history.push("/")
+    }, [history])
+
     return (
         <section className={style.editAndAddJogBlock}>
             <div className={style.editAndAddJogContainer}>
@@ -27,9 +35,11 @@ export const EditAndAddJog = React.memo((props: EditAndAddJogPropsType) => {
                     <Button
                         type={"submit"}
                         title={"Save"}
+                        onClick={() => console.log("SaveButton was Clicked")}
                         className={style.saveButton}
                     />
                     <ButtonCancel
+                        onClick={onCancelButtonClickHandler}
                         className={style.cancelButton}
                     />
                 </form>

@@ -2,14 +2,23 @@
 @import "./src/assets/styles/mixins.scss";
 
 .mainBlock {
-  @include flexBox(row, center, center, nowrap);
+  @include flexBox(row, center, flex-start, nowrap);
   width: 100%;
   min-height: 70vh; // !!! maybe fix it !!!
-  padding: 50px;
+  padding: 110px;
 
   .mainContainer {
     @include flexBox(column, center, center, nowrap);
     width: 70%;
     height: 100%;
+  }
+
+  .addItemButton {
+    position: fixed;
+    width: 60px;
+    height: 60px;
+    bottom: 20px;
+    right: 20px;
+    cursor: pointer;
   }
 }

@@ -5,11 +5,17 @@ type DefaultButtonPropsType = DetailedHTMLProps<ButtonHTMLAttributes<HTMLButtonE
 
 type ButtonPropsType = DefaultButtonPropsType & {
     title: string
+    onClick: () => void
     className?: string
 }
 
 export const Button = React.memo((props: ButtonPropsType) => {
     return (
-        <button type={props.type} className={props.className}>{props.title}</button>
+        <button
+            type={props.type}
+            onClick={props.onClick}
+            className={props.className}>
+            {props.title}
+        </button>
     )
 })

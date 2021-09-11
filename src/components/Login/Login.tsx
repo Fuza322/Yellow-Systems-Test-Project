@@ -17,6 +17,7 @@ export const Login = React.memo((props: LoginPropsType) => {
                         <Button
                             type={"button"}
                             title={"Let me in"}
+                            onClick={() => console.log("LoginButton was Clicked")}
                             className={style.loginButton}
                         />
                     </div>
