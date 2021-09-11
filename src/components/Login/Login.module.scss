@@ -1,2 +1,12 @@
 @import "./src/assets/styles/variebles.scss";
 @import "./src/assets/styles/mixins.scss";
+
+.loginBlock {
+  @include flexBox(row, center, center, nowrap);
+  width: 100%;
+
+  .loginContainer {
+    @include flexBox(column, center, flex-start, nowrap);
+    width: 70%;
+  }
+}

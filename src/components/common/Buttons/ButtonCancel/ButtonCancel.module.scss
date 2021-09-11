@@ -1,0 +1,15 @@
+@import "./src/assets/styles/variebles.scss";
+@import "./src/assets/styles/mixins.scss";
+
+.buttonCancel {
+  @include flexBox(row, center, center, nowrap);
+  width: 27px;
+  height: 27px;
+  background-color: transparent;
+  cursor: pointer;
+
+  .buttonCancelImg {
+    width: 27px;
+    height: 27px;
+  }
+}

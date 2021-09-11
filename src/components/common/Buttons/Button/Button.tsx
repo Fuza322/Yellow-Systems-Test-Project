@@ -1,10 +1,15 @@
-import React from "react"
+import React, {ButtonHTMLAttributes, DetailedHTMLProps} from "react"
 import style from "./Button.module.scss"
 
-type ButtonPropsType = {}
+type DefaultButtonPropsType = DetailedHTMLProps<ButtonHTMLAttributes<HTMLButtonElement>, HTMLButtonElement>
+
+type ButtonPropsType = DefaultButtonPropsType & {
+    title: string
+    className?: string
+}
 
 export const Button = React.memo((props: ButtonPropsType) => {
     return (
-        <button>Button text</button>
+        <button type={props.type} className={props.className}>{props.title}</button>
     )
 })

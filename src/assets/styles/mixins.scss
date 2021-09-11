@@ -23,6 +23,10 @@
   font-size: $fontSize;
   font-weight: $fontWeight;
   color: $whiteTextColor;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: normal;
 }
 
 @mixin inputAndTextArea($width, $height, $fonstSize, $textColor, $border) {
@@ -36,13 +40,13 @@
   @include text($fontFamilyStyle, $fonstSize, 500, $textColor);
 }
 
-@mixin button($width, $height, $fonstSize, $backgroundColor, $border) {
+@mixin button($width, $height, $backgroundColor, $border) {
   width: $width;
   height: $height;
   background-color: $backgroundColor;
   overflow: hidden;
   border: $border;
   border-radius: 6px;
+  cursor: pointer;
   transition: .3s;
-  @include text($fontFamilyStyle, $fonstSize, 400, $textColor);
 }

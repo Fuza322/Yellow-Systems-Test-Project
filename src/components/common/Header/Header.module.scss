@@ -23,12 +23,8 @@
     .headerNavItem {
       @include text(sans-serif, 14px, 500, $whiteTextColor);
       height: 16px;
-      font-weight: bold;
-      font-stretch: normal;
-      font-style: normal;
-      line-height: normal;
-      letter-spacing: normal;
       text-align: center;
+      font-weight: bold;
       text-transform: uppercase;
     }
   }

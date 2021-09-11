@@ -1,7 +1,7 @@
 import React, {useState} from "react"
-import style from "./ButtonFilter.module.scss"
 import activeFilterButton from "../../../../assets/images/buttons/filterButton/activeFilterButton/filter-active.png"
 import defaultFilterButton from "../../../../assets/images/buttons/filterButton/defaultFilterButton/filter.png"
+import style from "./ButtonFilter.module.scss"
 
 type ButtonFilterPropsType = {}
 
