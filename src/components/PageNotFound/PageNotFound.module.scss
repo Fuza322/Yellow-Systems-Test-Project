@@ -32,9 +32,9 @@
       margin: 140px 0 0;
 
       .createFirstJogButton {
-        @include button(250px, 60px, transparent, solid 3px #E990F9);
+        @include button(250px, 60px, transparent, solid 3px $secondColor);
         border-radius: 36px;
-        @include text(sans-serif, 18px, 500, #E990F9);
+        @include text(sans-serif, 18px, 500, $secondColor);
         font-weight: bold;
         text-align: center;
       }

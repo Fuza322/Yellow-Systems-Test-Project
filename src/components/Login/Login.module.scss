@@ -14,7 +14,7 @@
       @include flexBox(column, center, center, nowrap);
       width: 503px;
       height: 379px;
-      background-color: #E990F9;
+      background-color: $secondColor;
       border-radius: 44px;
 
       .loginImgContainer {

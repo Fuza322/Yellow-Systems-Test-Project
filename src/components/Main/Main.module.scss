@@ -1,2 +1,15 @@
 @import "./src/assets/styles/variebles.scss";
 @import "./src/assets/styles/mixins.scss";
+
+.mainBlock {
+  @include flexBox(row, center, center, nowrap);
+  width: 100%;
+  min-height: 70vh; // !!! maybe fix it !!!
+  padding: 50px;
+
+  .mainContainer {
+    @include flexBox(column, center, center, nowrap);
+    width: 70%;
+    height: 100%;
+  }
+}

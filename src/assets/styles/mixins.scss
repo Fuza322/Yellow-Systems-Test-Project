@@ -18,11 +18,11 @@
   flex-wrap: $flexWrap;
 }
 
-@mixin text($fontFamily, $fontSize, $fontWeight, $whiteTextColor) {
+@mixin text($fontFamily, $fontSize, $fontWeight, $textColor) {
   font-family: $fontFamily;
   font-size: $fontSize;
   font-weight: $fontWeight;
-  color: $whiteTextColor;
+  color: $textColor;
   font-stretch: normal;
   font-style: normal;
   line-height: normal;
