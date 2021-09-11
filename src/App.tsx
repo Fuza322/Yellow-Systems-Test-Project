@@ -5,7 +5,7 @@ import {Main} from "./components/Main/Main"
 import {Login} from "./components/Login/Login"
 import {Info} from "./components/Info/Info"
 import {EditAndAddJog} from "./components/EditAndAddJog/EditAndAddJog"
-import {PageNotFound} from "./components/PageNotFound/PageNotFound"
+import {EmptyPage} from "./components/EmptyPage/EmptyPage"
 import {Contacts} from "./components/Contacts/Contacts"
 
 function App() {
@@ -19,8 +19,8 @@ function App() {
                 <Route path={"/editjog"} render={() => <EditAndAddJog/>}/>
                 <Route path={"/addjog"} render={() => <EditAndAddJog/>}/>
                 <Route path={"/contacts"} render={() => <Contacts/>}/>
-                <Route path={"/404"} render={() => <PageNotFound/>}/>
-                <Redirect from={"*"} to={"/404"}/>
+                <Route path={"/empty"} render={() => <EmptyPage/>}/>
+                <Redirect from={"*"} to={"/empty"}/>
             </Switch>
         </div>
     )

@@ -1,11 +1,11 @@
 import React from "react"
 import {Button} from "../common/Buttons/Button/Button"
 import nothingIsThereImg from "../../assets/images/nothingIsThere/sad-rounded-square-emoticon.png"
-import style from "./PageNotFound.module.scss"
+import style from "./EmptyPage.module.scss"
 
-type PageNotFoundPropsType = {}
+type EmptyPagePropsType = {}
 
-export const PageNotFound = React.memo((props: PageNotFoundPropsType) => {
+export const EmptyPage = React.memo((props: EmptyPagePropsType) => {
     return (
         <section className={style.nothingIsThereBlock}>
             <div className={style.nothingIsThereContainer}>
