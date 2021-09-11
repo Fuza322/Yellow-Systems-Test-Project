@@ -11,12 +11,13 @@ export const Login = React.memo((props: LoginPropsType) => {
             <div className={style.loginContainer}>
                 <div className={style.loginForm}>
                     <div className={style.loginImgContainer}>
-                        <img src={loginLogo} alt={"loginLogo"}/>
+                        <img src={loginLogo} alt={"loginLogo"} className={style.loginImg}/>
                     </div>
-                    <div>
+                    <div className={style.loginButtonContainer}>
                         <Button
                             type={"button"}
                             title={"Let me in"}
+                            className={style.loginButton}
                         />
                     </div>
                 </div>

@@ -4,9 +4,42 @@
 .loginBlock {
   @include flexBox(row, center, center, nowrap);
   width: 100%;
+  height: 70vh; // !!! maybe fix it !!!
 
   .loginContainer {
-    @include flexBox(column, center, flex-start, nowrap);
+    @include flexBox(row, center, center, nowrap);
     width: 70%;
+
+    .loginForm {
+      @include flexBox(column, center, center, nowrap);
+      width: 503px;
+      height: 379px;
+      background-color: #E990F9;
+      border-radius: 44px;
+
+      .loginImgContainer {
+        width: 160px;
+        height: 150px;
+        margin: 0 25px;
+
+        .loginImg {
+          width: 160px;
+          height: 150px;
+        }
+      }
+
+      .loginButtonContainer {
+        @include flexBox(row, center, center, nowrap);
+        margin: 56px 0 0 0;
+
+        .loginButton {
+          @include button(150px, 60px, transparent, solid 3px $whiteTextColor);
+          border-radius: 36px;
+          @include text(sans-serif, 18px, 500, $whiteTextColor);
+          font-weight: bold;
+          text-align: center;
+        }
+      }
+    }
   }
 }
