@@ -31,7 +31,7 @@ export const Header = React.memo((props: HeaderPropsType) => {
                     headerNavStatus={headerNavStatus}
                     onClickFilterButton={onFilterButtonClickHandler}
                 />
-                {/*<BurgerNav
+                {/*<BurgerNav // ПОПРАВИТЬ BURGERNAV, как в Navbar !!!
                     isActiveFilterButton={isActiveFilterButton}
                     onClickFilterButton={onFilterButtonClickHandler}
                 />*/}

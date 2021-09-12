@@ -5,11 +5,36 @@
   @include flexBox(row, space-between, center, nowrap);
   width: 350px;
 
-  .headerNavItem {
-    @include text(sans-serif, 14px, 500, $whiteTextColor);
-    height: 16px;
-    text-align: center;
-    font-weight: bold;
-    text-transform: uppercase;
+  .headerNavItemContaner {
+    position: relative;
+
+    .headerNavLink {
+      @include text(sans-serif, 14px, 500, $whiteTextColor);
+      height: 16px;
+      text-align: center;
+      font-weight: bold;
+      text-transform: uppercase;
+    }
+
+    .activeHeaderNavLink {
+      @include text(sans-serif, 14px, 500, $whiteTextColor);
+      height: 16px;
+      text-align: center;
+      font-weight: bold;
+      text-transform: uppercase;
+
+      &::before {
+        position: absolute;
+        content: '';
+        bottom: -10px;
+        left: 50%;
+        width: 40px;
+        height: 2px;
+        background-color: $whiteTextColor;
+        transform: translate(-50%, 50%);
+      }
+    }
   }
+
+
 }

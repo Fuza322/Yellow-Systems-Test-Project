@@ -19,28 +19,38 @@ export const Navbar = React.memo((props: NavbarPropsType) => {
         dispatch(setHeaderNavStatus(headerNavStatus))
     }, [dispatch])
 
-    // const
-
     return (
         <div className={style.headerNavContainer}>
-            <NavLink
-                onClick={() => onNavLinkClickHandler("jogs")}
-                to={"/"}
-                className={style.headerNavItem}>
-                Jogs
-            </NavLink>
-            <NavLink
-                onClick={() => onNavLinkClickHandler("info")}
-                to={"/info"}
-                className={style.headerNavItem}>
-                Info
-            </NavLink>
-            <NavLink
-                onClick={() => onNavLinkClickHandler("contactUs")}
-                to={"/contacts"}
-                className={style.headerNavItem}>
-                Contact us
-            </NavLink>
+            <div className={style.headerNavItemContaner}>
+                <NavLink
+                    onClick={() => onNavLinkClickHandler("jogs")}
+                    to={"/"}
+                    className={props.headerNavStatus === "jogs"
+                        ? `${style.activeHeaderNavLink}`
+                        : `${style.headerNavLink}`}>
+                    Jogs
+                </NavLink>
+            </div>
+            <div className={style.headerNavItemContaner}>
+                <NavLink
+                    onClick={() => onNavLinkClickHandler("info")}
+                    to={"/info"}
+                    className={props.headerNavStatus === "info"
+                        ? `${style.activeHeaderNavLink}`
+                        : `${style.headerNavLink}`}>
+                    Info
+                </NavLink>
+            </div>
+            <div className={style.headerNavItemContaner}>
+                <NavLink
+                    onClick={() => onNavLinkClickHandler("contactUs")}
+                    to={"/contacts"}
+                    className={props.headerNavStatus === "contactUs"
+                        ? `${style.activeHeaderNavLink}`
+                        : `${style.headerNavLink}`}>
+                    Contact us
+                </NavLink>
+            </div>
             <ButtonFilter
                 isActiveButton={props.isActiveFilterButton}
                 onClick={props.onClickFilterButton}
