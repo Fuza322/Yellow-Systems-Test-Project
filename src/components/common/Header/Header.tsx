@@ -3,10 +3,10 @@ import {useLocation} from "react-router-dom"
 import {useSelector, useDispatch} from "react-redux"
 import {AppRootStateType} from "../../../redux/store"
 import {setFilterButtonStatus} from "../../../redux/reducers/app-reducer"
-import {Navbar} from "./Navbar/Navbar"
+import {HeaderDisplay} from "./HeaderDisplay/HeaderDisplay"
 //import {BurgerNav} from "./BurgerNav/BurgerNav"
 import {DateFilter} from "../DateFilter/DateFilter"
-import headerLogo from "../../../assets/images/logo/headerLogo/logo.png"
+import headerLogo from "../../../assets/images/logo/headerLogo/whiteHeaderLogo/logo.png"
 import style from "./Header.module.scss"
 
 type HeaderPropsType = {}
@@ -29,14 +29,10 @@ export const Header = React.memo((props: HeaderPropsType) => {
                     <img src={headerLogo} alt={"headerLogo"} className={style.headerLogoImg}/>
                 </div>
                 {pathname !== "/login"
-                && <Navbar
+                && <HeaderDisplay
                     isActiveFilterButton={isActiveFilterButton}
                     onClickFilterButton={onFilterButtonClickHandler}
                 />}
-                {/*<BurgerNav // ПОПРАВИТЬ BURGERNAV, как в Navbar !!!
-                    isActiveFilterButton={isActiveFilterButton}
-                    onClickFilterButton={onFilterButtonClickHandler}
-                />*/}
             </header>
             {isActiveFilterButton && <DateFilter/>}
         </>

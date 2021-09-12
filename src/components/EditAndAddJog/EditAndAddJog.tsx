@@ -18,16 +18,16 @@ export const EditAndAddJog = React.memo((props: EditAndAddJogPropsType) => {
         <section className={style.editAndAddJogBlock}>
             <div className={style.editAndAddJogContainer}>
                 <form className={style.editAndAddJogForm}>
-                    <div className={style.gridContainer}>
-                        <div className={style.gridItem}>
+                    <div className={style.divContainer}>
+                        <div className={style.divItem}>
                             <span className={style.editAndAddJogHelpText}>Distance</span>
                             <input type={"number"} className={style.editAndAddJogInput}/>
                         </div>
-                        <div className={style.gridItem}>
+                        <div className={style.divItem}>
                             <span className={style.editAndAddJogHelpText}>Time</span>
                             <input type={"number"} className={style.editAndAddJogInput}/>
                         </div>
-                        <div className={style.gridItem}>
+                        <div className={style.divItem}>
                             <span className={style.editAndAddJogHelpText}>Date</span>
                             <input type="text" className={style.editAndAddJogInput}/>
                         </div>

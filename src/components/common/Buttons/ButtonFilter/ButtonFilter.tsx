@@ -5,7 +5,7 @@ import style from "./ButtonFilter.module.scss"
 
 type ButtonFilterPropsType = {
     isActiveButton: boolean
-    disabled: boolean
+    disabled?: boolean
     onClick: () => void
 }
 

@@ -1,5 +1,7 @@
 import React, {useCallback} from "react"
 import {Redirect, useHistory} from "react-router-dom"
+import {useDispatch} from "react-redux"
+import {setFilterButtonStatus} from "../../redux/reducers/app-reducer"
 import {JogItem} from "../common/JogItem/JogItem"
 import {ButtonAddItem} from "../common/Buttons/ButtonAddItem/ButtonAddItem"
 import style from "./Main.module.scss"
@@ -7,6 +9,8 @@ import style from "./Main.module.scss"
 type MainPropsType = {}
 
 export const Main = React.memo((props: MainPropsType) => {
+
+    const dispatch = useDispatch()
 
     const jogItems: Array<any> = [
         {
@@ -45,12 +49,12 @@ export const Main = React.memo((props: MainPropsType) => {
             time: 60
         }
     ]
-
     const history = useHistory()
 
     const onAddJobButtonClickHandler = useCallback(() => {
+        dispatch(setFilterButtonStatus(false))
         history.push("/addjog")
-    }, [history])
+    }, [dispatch, history])
 
     if (jogItems.length === 0) {
         return <Redirect to={"/empty"}/>
@@ -65,7 +69,6 @@ export const Main = React.memo((props: MainPropsType) => {
             </div>
             <ButtonAddItem
                 onClick={onAddJobButtonClickHandler}
-                className={style.addItemButton}
             />
         </section>
     )

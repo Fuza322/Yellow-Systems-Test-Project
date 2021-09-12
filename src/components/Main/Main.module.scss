@@ -5,20 +5,15 @@
   @include flexBox(row, center, flex-start, nowrap);
   width: 100%;
   min-height: calc(100vh - 118px);
-  padding: 88px 0;
+  padding: 120px 0 88px 0;
+
+  @media only screen and (max-width: 650px) {
+    padding-top: 95px;
+  }
 
   .mainContainer {
     @include flexBox(column, flex-start, center, nowrap);
     width: 70%;
     height: 100%;
-  }
-
-  .addItemButton {
-    position: fixed;
-    width: 60px;
-    height: 60px;
-    bottom: 20px;
-    right: 20px;
-    cursor: pointer;
   }
 }

@@ -10,7 +10,7 @@ export const EmptyPage = React.memo((props: EmptyPagePropsType) => {
         <section className={style.nothingIsThereBlock}>
             <div className={style.nothingIsThereContainer}>
                 <div className={style.nothingIsThereImgContainer}>
-                    <img src={nothingIsThereImg} alt="nothingIsThereImg" className={style.nothingIsThereImg}/>
+                    <img src={nothingIsThereImg} alt={"nothingIsThereImg"} className={style.nothingIsThereImg}/>
                 </div>
                 <span className={style.nothingIsThereText}>Nothing is there</span>
                 <div className={style.buttonContainer}>

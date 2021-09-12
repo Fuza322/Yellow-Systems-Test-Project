@@ -9,18 +9,33 @@
   height: 26px;
   cursor: pointer;
 
+  @media only screen and (max-width: 650px) {
+    width: 39px;
+    height: 39px;
+  }
+
   .filterImg {
     width: 26px;
     height: 26px;
+
+    @media only screen and (max-width: 650px) {
+      width: 39px;
+      height: 39px;
+    }
   }
 
   .defaultFilterImg {
     width: 20px;
     height: 20px;
+
+    @media only screen and (max-width: 650px) {
+      width: 26px;
+      height: 26px;
+    }
   }
 }
 
 .disabledButtonFilter {
   cursor: default;
-  opacity: 70%;
+  opacity: 65%;
 }

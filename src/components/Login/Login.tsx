@@ -1,17 +1,26 @@
 import React from "react"
+import useWindowDimensions from "../../assets/hooks/hooks"
 import {Button} from "../common/Buttons/Button/Button"
-import loginLogo from "../../assets/images/logo/loginLogo/bear-face.png"
+import desktopLoginLogo from "../../assets/images/logo/loginLogo/desktopLoginLogo/bear-face.png"
+import mobileLoginLogo from "../../assets/images/logo/loginLogo/mobileLoginLogo/bearFace.png"
 import style from "./Login.module.scss"
+
 
 type LoginPropsType = {}
 
 export const Login = React.memo((props: LoginPropsType) => {
+
+    const {width} = useWindowDimensions()
+
     return (
         <section className={style.loginBlock}>
             <div className={style.loginContainer}>
                 <div className={style.loginForm}>
                     <div className={style.loginImgContainer}>
-                        <img src={loginLogo} alt={"loginLogo"} className={style.loginImg}/>
+                        {width <= 650
+                            ? <img src={mobileLoginLogo} alt={"loginLogo"} className={style.loginImg}/>
+                            : <img src={desktopLoginLogo} alt={"loginLogo"} className={style.loginImg}/>
+                        }
                     </div>
                     <div className={style.loginButtonContainer}>
                         <Button

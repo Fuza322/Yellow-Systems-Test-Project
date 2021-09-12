@@ -9,8 +9,8 @@ type ButtonAddItemPropsType = {
 
 export const ButtonAddItem = React.memo((props: ButtonAddItemPropsType) => {
     return (
-        <div onClick={props.onClick} className={props.className}>
-            <img src={addItemButton} alt={"cancelImg"} className={style.buttonCancelImg}/>
+        <div onClick={props.onClick} className={style.addItemButton}>
+            <img src={addItemButton} alt={"cancelImg"} className={style.addItemButtonImg}/>
         </div>
     )
 })

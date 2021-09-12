@@ -1,2 +1,30 @@
 @import "./src/assets/styles/variebles.scss";
 @import "./src/assets/styles/mixins.scss";
+
+.addItemButton {
+  position: fixed;
+  width: 60px;
+  height: 60px;
+  bottom: 20px;
+  right: 20px;
+  cursor: pointer;
+
+  @media only screen and (max-width: 650px) {
+    width: 47px;
+    height: 47px;
+  }
+
+  .addItemButtonImg {
+    width: 60px;
+    height: 60px;
+    border-radius: 20px;
+    background-color: #ffffff;
+
+    @media only screen and (max-width: 650px) {
+      width: 47px;
+      height: 47px;
+    }
+  }
+
+
+}

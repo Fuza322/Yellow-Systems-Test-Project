@@ -17,6 +17,10 @@
       background-color: $secondColor;
       border-radius: 44px;
 
+      @media only screen and (max-width: 650px) {
+        background-color: transparent;
+      }
+
       .loginImgContainer {
         width: 160px;
         height: 150px;
@@ -38,6 +42,11 @@
           @include text(sans-serif, 18px, 500, $whiteTextColor);
           font-weight: bold;
           text-align: center;
+
+          @media only screen and (max-width: 650px) {
+            border: solid 3px $secondColor;
+            color: $secondColor;
+          }
         }
       }
     }

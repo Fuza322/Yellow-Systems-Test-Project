@@ -1,5 +1,5 @@
 import React from "react"
-import cancelImg from "../../../../assets/images/buttons/cancelButton/cancel.png"
+import cancelImg from "../../../../assets/images/buttons/cancelButton/whiteCancelButton/cancel.png"
 import style from "./ButtonCancel.module.scss"
 
 type ButtonCancelPropsType = {
