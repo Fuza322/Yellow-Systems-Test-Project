@@ -16,6 +16,7 @@ export const BurgerNav = React.memo((props: BurgerNavPropsType) => {
             <NavLink to={"/"} className={style.headerNavItem}>Contacs us</NavLink>
             <ButtonFilter
                 isActiveButton={props.isActiveFilterButton}
+                disabled={true}
                 onClick={props.onClickFilterButton}
             />
         </div>

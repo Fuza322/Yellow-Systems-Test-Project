@@ -5,12 +5,10 @@ enum APP_ACTIONS_TYPES {
     SET_APP_STATUS = "SET_APP_STATUS",
     SET_ERROR = "SET_ERROR",
     SET_FILTER_BUTTON_STATUS = "SET_FILTER_BUTTON_STATUS",
-    SET_HEADER_NAV_STATUS = "SET_HEADER_NAV_STATUS"
 }
 
 const initialState = {
     isActiveFilterButton: false,
-    headerNavStatus: "default" as HeaderNavStatusType
 }
 
 type InitialStateType = typeof initialState
@@ -19,8 +17,6 @@ export const appReducer = (state: InitialStateType = initialState, action: AppAc
     switch (action.type) {
         case APP_ACTIONS_TYPES.SET_FILTER_BUTTON_STATUS:
             return {...state, isActiveFilterButton: action.isActiveFilterButton}
-        case APP_ACTIONS_TYPES.SET_HEADER_NAV_STATUS:
-            return {...state, headerNavStatus: action.headerNavStatus}
        /*case APP_ACTIONS_TYPES.SET_APP_STATUS:
             return {...state, status: action.status}
         case APP_ACTIONS_TYPES.SET_ERROR:
@@ -39,9 +35,6 @@ export const setAppErrorAC = (error: string | null) => (
 
 export const setFilterButtonStatus = (isActiveFilterButton: boolean) => (
     {type: APP_ACTIONS_TYPES.SET_FILTER_BUTTON_STATUS, isActiveFilterButton} as const)
-
-export const setHeaderNavStatus = (headerNavStatus: HeaderNavStatusType) => (
-    {type: APP_ACTIONS_TYPES.SET_HEADER_NAV_STATUS, headerNavStatus} as const)
 
 // thunks
 /*export const initializeAppTC = (): ThunkAction<void, AppRootStateType, unknown, AppActionsType> =>
@@ -65,9 +58,7 @@ export const setHeaderNavStatus = (headerNavStatus: HeaderNavStatusType) => (
     }*/
 
 // types
-export type HeaderNavStatusType = "default" | "jogs" | "info" | "contactUs"
 export type RequestStatusType = "idle" | "loading" | "succeeded" | "failed"
 export type AppReducerActionsType = ReturnType<typeof setAppStatusAC>
     | ReturnType<typeof setAppErrorAC>
     | ReturnType<typeof setFilterButtonStatus>
-    | ReturnType<typeof setHeaderNavStatus>

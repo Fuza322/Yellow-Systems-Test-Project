@@ -5,17 +5,23 @@ import style from "./ButtonFilter.module.scss"
 
 type ButtonFilterPropsType = {
     isActiveButton: boolean
+    disabled: boolean
     onClick: () => void
 }
 
 export const ButtonFilter = React.memo((props: ButtonFilterPropsType) => {
 
     return (
-        <div onClick={props.onClick} className={style.buttonFilter}>
+        <button
+            disabled={props.disabled}
+            onClick={props.onClick}
+            className={!props.disabled
+                ? `${style.buttonFilter}`
+                : `${style.buttonFilter} ${style.disabledButtonFilter}`}>
             {props.isActiveButton
                 ? <img src={activeFilterButton} alt={"activeFilterButton"} className={style.filterImg}/>
                 : <img src={defaultFilterButton} alt={"defaultFilterButton"} className={`${style.filterImg} ${style.defaultFilterImg}` }/>
             }
-        </div>
+        </button>
     )
 })

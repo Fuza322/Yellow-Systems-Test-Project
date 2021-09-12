@@ -1,13 +1,12 @@
-import React, {useCallback} from "react"
-import {NavLink} from "react-router-dom"
-import {useDispatch} from "react-redux"
-import {HeaderNavStatusType, setHeaderNavStatus} from "../../../../redux/reducers/app-reducer"
+import React from "react"
+import {NavLink, useLocation} from "react-router-dom"
 import {ButtonFilter} from "../../Buttons/ButtonFilter/ButtonFilter"
 import style from "./Navbar.module.scss"
+import {useDispatch} from "react-redux";
+import {setFilterButtonStatus} from "../../../../redux/reducers/app-reducer";
 
 type NavbarPropsType = {
     isActiveFilterButton: boolean
-    headerNavStatus: HeaderNavStatusType
     onClickFilterButton: () => void
 }
 
@@ -15,17 +14,14 @@ export const Navbar = React.memo((props: NavbarPropsType) => {
 
     const dispatch = useDispatch()
 
-    const onNavLinkClickHandler = useCallback((headerNavStatus: HeaderNavStatusType) => {
-        dispatch(setHeaderNavStatus(headerNavStatus))
-    }, [dispatch])
+    const {pathname} = useLocation()
 
     return (
         <div className={style.headerNavContainer}>
             <div className={style.headerNavItemContaner}>
                 <NavLink
-                    onClick={() => onNavLinkClickHandler("jogs")}
                     to={"/"}
-                    className={props.headerNavStatus === "jogs"
+                    className={pathname === "/"
                         ? `${style.activeHeaderNavLink}`
                         : `${style.headerNavLink}`}>
                     Jogs
@@ -33,9 +29,9 @@ export const Navbar = React.memo((props: NavbarPropsType) => {
             </div>
             <div className={style.headerNavItemContaner}>
                 <NavLink
-                    onClick={() => onNavLinkClickHandler("info")}
                     to={"/info"}
-                    className={props.headerNavStatus === "info"
+                    onClick={() => dispatch(dispatch(setFilterButtonStatus(false)))}
+                    className={pathname === "/info"
                         ? `${style.activeHeaderNavLink}`
                         : `${style.headerNavLink}`}>
                     Info
@@ -43,9 +39,9 @@ export const Navbar = React.memo((props: NavbarPropsType) => {
             </div>
             <div className={style.headerNavItemContaner}>
                 <NavLink
-                    onClick={() => onNavLinkClickHandler("contactUs")}
                     to={"/contacts"}
-                    className={props.headerNavStatus === "contactUs"
+                    onClick={() => dispatch(dispatch(setFilterButtonStatus(false)))}
+                    className={pathname === "/contacts"
                         ? `${style.activeHeaderNavLink}`
                         : `${style.headerNavLink}`}>
                     Contact us
@@ -53,6 +49,7 @@ export const Navbar = React.memo((props: NavbarPropsType) => {
             </div>
             <ButtonFilter
                 isActiveButton={props.isActiveFilterButton}
+                disabled={pathname !== "/"}
                 onClick={props.onClickFilterButton}
             />
         </div>

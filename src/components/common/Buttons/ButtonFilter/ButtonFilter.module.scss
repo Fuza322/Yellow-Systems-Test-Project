@@ -3,6 +3,8 @@
 
 .buttonFilter {
   @include flexBox(row, center, center, nowrap);
+  background-color: transparent;
+  border: none;
   width: 26px;
   height: 26px;
   cursor: pointer;
@@ -16,4 +18,9 @@
     width: 20px;
     height: 20px;
   }
+}
+
+.disabledButtonFilter {
+  cursor: default;
+  opacity: 70%;
 }
