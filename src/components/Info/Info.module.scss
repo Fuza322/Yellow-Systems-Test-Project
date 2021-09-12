@@ -4,7 +4,7 @@
 .infoBlock {
   @include flexBox(row, center, center, nowrap);
   width: 100%;
-  margin: 85px 0 0;
+  min-height: calc(100vh - 118px);
 
   .infoContainer {
     @include flexBox(column, center, flex-start, nowrap);
@@ -15,7 +15,7 @@
       text-align: center;
       font-weight: bold;
       text-transform: uppercase;
-      margin: 0 0 15px 0;
+      margin: 15px 0;
     }
 
     .infoText {

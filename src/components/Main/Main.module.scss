@@ -4,11 +4,11 @@
 .mainBlock {
   @include flexBox(row, center, flex-start, nowrap);
   width: 100%;
-  min-height: 70vh; // !!! maybe fix it !!!
-  padding: 110px;
+  min-height: calc(100vh - 118px);
+  padding: 88px 0;
 
   .mainContainer {
-    @include flexBox(column, center, center, nowrap);
+    @include flexBox(column, flex-start, center, nowrap);
     width: 70%;
     height: 100%;
   }

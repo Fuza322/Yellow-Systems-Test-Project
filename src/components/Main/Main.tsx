@@ -60,11 +60,7 @@ export const Main = React.memo((props: MainPropsType) => {
         <section className={style.mainBlock}>
             <div className={style.mainContainer}>
                 {jogItems.map(item => {
-                    return (
-                        <div key={item.id}>
-                            <JogItem/>
-                        </div>
-                    )
+                    return (<JogItem/>)
                 })}
             </div>
             <ButtonAddItem

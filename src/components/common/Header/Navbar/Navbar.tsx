@@ -1,9 +1,9 @@
 import React from "react"
 import {NavLink, useLocation} from "react-router-dom"
+import {useDispatch} from "react-redux"
+import {setFilterButtonStatus} from "../../../../redux/reducers/app-reducer"
 import {ButtonFilter} from "../../Buttons/ButtonFilter/ButtonFilter"
 import style from "./Navbar.module.scss"
-import {useDispatch} from "react-redux";
-import {setFilterButtonStatus} from "../../../../redux/reducers/app-reducer";
 
 type NavbarPropsType = {
     isActiveFilterButton: boolean

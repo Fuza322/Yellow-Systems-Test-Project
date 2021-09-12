@@ -1,7 +1,9 @@
 import React from "react"
-import {NavLink} from "react-router-dom"
+import {NavLink, useLocation} from "react-router-dom"
 import {ButtonFilter} from "../../Buttons/ButtonFilter/ButtonFilter"
-import style from "./BurgerNav.module.scss"
+import style from "./Navbar.module.scss"
+import {useDispatch} from "react-redux"
+import {setFilterButtonStatus} from "../../../../redux/reducers/app-reducer"
 
 type BurgerNavPropsType = {
     isActiveFilterButton: boolean
@@ -9,14 +11,45 @@ type BurgerNavPropsType = {
 }
 
 export const BurgerNav = React.memo((props: BurgerNavPropsType) => {
+
+    const dispatch = useDispatch()
+
+    const {pathname} = useLocation()
+
     return (
         <div className={style.headerNavContainer}>
-            <NavLink to={"/"} className={style.headerNavItem}>Jogs</NavLink>
-            <NavLink to={"/info"} className={style.headerNavItem}>Info</NavLink>
-            <NavLink to={"/"} className={style.headerNavItem}>Contacs us</NavLink>
+            <div className={style.headerNavItemContaner}>
+                <NavLink
+                    to={"/"}
+                    className={pathname === "/"
+                        ? `${style.activeHeaderNavLink}`
+                        : `${style.headerNavLink}`}>
+                    Jogs
+                </NavLink>
+            </div>
+            <div className={style.headerNavItemContaner}>
+                <NavLink
+                    to={"/info"}
+                    onClick={() => dispatch(dispatch(setFilterButtonStatus(false)))}
+                    className={pathname === "/info"
+                        ? `${style.activeHeaderNavLink}`
+                        : `${style.headerNavLink}`}>
+                    Info
+                </NavLink>
+            </div>
+            <div className={style.headerNavItemContaner}>
+                <NavLink
+                    to={"/contacts"}
+                    onClick={() => dispatch(dispatch(setFilterButtonStatus(false)))}
+                    className={pathname === "/contacts"
+                        ? `${style.activeHeaderNavLink}`
+                        : `${style.headerNavLink}`}>
+                    Contact us
+                </NavLink>
+            </div>
             <ButtonFilter
                 isActiveButton={props.isActiveFilterButton}
-                disabled={true}
+                disabled={pathname !== "/"}
                 onClick={props.onClickFilterButton}
             />
         </div>

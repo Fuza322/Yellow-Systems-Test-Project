@@ -3,7 +3,7 @@
 
 .jogItemContainer {
   @include flexBox(row, center, center, nowrap);
-  margin: 0 0 88px 0;
+  margin-bottom: 88px;
 
   .jogItemImgContainer {
     width: 87px;
