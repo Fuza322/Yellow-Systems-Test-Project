@@ -1,55 +1,77 @@
 import {ThunkAction} from "redux-thunk"
-import {AppActionsType} from "../store"
+import {jogsAPI, JogType} from "../../api/api"
+import {AppActionsType, AppRootStateType} from "../store"
+import { setAppIsInitializedAC } from "./app-reducer"
 
-enum APP_ACTIONS_TYPES {
-    SET_APP_STATUS = "SET_APP_STATUS",
-    SET_ERROR = "SET_ERROR"
+enum JOGS_ACTIONS_TYPES {
+    SET_JOGS = "SET_JOGS",
 }
 
-const initialState = {}
+const initialState = {
+    jogs: [] as Array<JogType>
+}
 
 type InitialStateType = typeof initialState
 
 export const jogsReducer = (state: InitialStateType = initialState, action: AppActionsType): InitialStateType => {
     switch (action.type) {
-        case APP_ACTIONS_TYPES.SET_APP_STATUS:
-            return {...state, status: action.status}
-        case APP_ACTIONS_TYPES.SET_ERROR:
-            return {...state, error: action.error}
+        case JOGS_ACTIONS_TYPES.SET_JOGS:
+            return {
+                ...state,
+                jogs: [...action.jogs, ...state.jogs]
+            }
         default:
             return state
     }
 }
 
 // actions
-export const setAppStatusAC = (status: RequestStatusType) => (
-    {type: APP_ACTIONS_TYPES.SET_APP_STATUS, status} as const)
-
-export const setAppErrorAC = (error: string | null) => (
-    {type: APP_ACTIONS_TYPES.SET_ERROR, error} as const)
+export const setJogsAC = (jogs: Array<JogType>) => {
+    return {type: JOGS_ACTIONS_TYPES.SET_JOGS, jogs} as const
+}
 
 // thunks
-/*export const initializeAppTC = (): ThunkAction<void, AppRootStateType, unknown, AppActionsType> =>
+export const fetchJogsTC = (): ThunkAction<void, AppRootStateType, unknown, AppActionsType> =>
     async (dispatch) => {
         try {
-            dispatch(setAppStatusAC("loading"))
-            const res = await authAPI.me()
-            if (res.data._id) {
-                dispatch(setIsLoggedInAC(true))
-                dispatch(setUserDataAC(res.data))
-                console.log("AuthMe success!!!")
-            }
-            dispatch(setAppStatusAC("succeeded"))
+            //dispatch(setAppIsInitializedAC(false))
+            const res = await jogsAPI.getJogs()
+            dispatch(setJogsAC(res))
         } catch (e) {
-            const error = e.response ? e.response.data.error : (`AuthMe failed: ${e.message}.`)
-            console.log(error)
-            dispatch(setAppStatusAC("failed"))
+            console.log(e)
         } finally {
-            // ...some code
+            //dispatch(setAppIsInitializedAC(true))
         }
-    }*/
+    }
+
+export const addJogTC = (date: string, time: number, distance: number): ThunkAction<void, AppRootStateType, unknown, AppActionsType> =>
+    async (dispatch) => {
+        try {
+            //dispatch(setAppIsInitializedAC(false))
+            console.log(date)
+            console.log(time)
+            console.log(distance)
+            await jogsAPI.addJog(date, time, distance)
+            //dispatch(fetchJogsTC())
+        } catch (e) {
+            console.log(e)
+        } finally {
+            //dispatch(setAppIsInitializedAC(true))
+        }
+    }
+
+export const updateJogTC = (date: string, time: number, distance: number, id: number, user_id: string): ThunkAction<void, AppRootStateType, unknown, AppActionsType> =>
+    async (dispatch) => {
+        try {
+            //dispatch(setAppIsInitializedAC(false))
+            await jogsAPI.updateJog(date, time, distance, id, user_id)
+            //dispatch(fetchJogsTC())
+        } catch (e) {
+            console.log(e)
+        } finally {
+            //dispatch(setAppIsInitializedAC(true))
+        }
+    }
 
 // types
-export type RequestStatusType = "idle" | "loading" | "succeeded" | "failed"
-export type AppReducerActionsType = ReturnType<typeof setAppStatusAC>
-    | ReturnType<typeof setAppErrorAC>
+export type JogsReducerActionsType = ReturnType<typeof setJogsAC>

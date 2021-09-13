@@ -3,19 +3,20 @@ import thunkMiddleware from "redux-thunk"
 import {composeWithDevTools} from "redux-devtools-extension"
 import {appReducer, AppReducerActionsType} from "./reducers/app-reducer"
 import {loginReducer} from "./reducers/login-reducer"
-import {jogsReducer} from "./reducers/jogs-reducer"
+import {jogsReducer, JogsReducerActionsType} from "./reducers/jogs-reducer"
 
 const rootReducer = combineReducers({
     appReducer: appReducer,
-    loginRedicer: loginReducer,
-    jogsReducer: jogsReducer
+    loginReducer: loginReducer,
+    jogsReducer: jogsReducer,
 })
 
 export const store = createStore(rootReducer, composeWithDevTools(applyMiddleware(thunkMiddleware)))
 export type AppRootStateType = ReturnType<typeof rootReducer>
 
 export type AppActionsType = AppReducerActionsType
-/*| LoginReducerActionsType*/
+    //| LoginReducerActionsType
+    | JogsReducerActionsType
 
 // @ts-ignore
 window.store = store

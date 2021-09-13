@@ -1,16 +1,25 @@
-import React from "react"
+import React, {useCallback} from "react"
+import {useHistory} from "react-router-dom"
+import {useDispatch} from "react-redux"
 import useWindowDimensions from "../../assets/hooks/hooks"
+import {loginTC} from "../../redux/reducers/login-reducer"
 import {Button} from "../common/Buttons/Button/Button"
 import desktopLoginLogo from "../../assets/images/logo/loginLogo/desktopLoginLogo/bear-face.png"
 import mobileLoginLogo from "../../assets/images/logo/loginLogo/mobileLoginLogo/bearFace.png"
 import style from "./Login.module.scss"
-
 
 type LoginPropsType = {}
 
 export const Login = React.memo((props: LoginPropsType) => {
 
     const {width} = useWindowDimensions()
+    const dispatch = useDispatch()
+    const history = useHistory()
+
+    const onLoginButtonClickHandler = useCallback(() => {
+        dispatch(loginTC())
+        history.push("/")
+    }, [dispatch, history])
 
     return (
         <section className={style.loginBlock}>
@@ -26,7 +35,7 @@ export const Login = React.memo((props: LoginPropsType) => {
                         <Button
                             type={"button"}
                             title={"Let me in"}
-                            onClick={() => console.log("LoginButton was Clicked")}
+                            onClick={onLoginButtonClickHandler}
                             className={style.loginButton}
                         />
                     </div>

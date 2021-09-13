@@ -6,6 +6,9 @@ import style from "./EmptyPage.module.scss"
 type EmptyPagePropsType = {}
 
 export const EmptyPage = React.memo((props: EmptyPagePropsType) => {
+
+
+
     return (
         <section className={style.nothingIsThereBlock}>
             <div className={style.nothingIsThereContainer}>

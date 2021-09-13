@@ -57,6 +57,10 @@
             @include inputAndTextArea(236px, 31px, 16px, $blackTextColor, solid 1px $greyTextColor);
             border-radius: 7px;
           }
+
+          .errorEditAndAddJogInput {
+            border: 3px solid $redErrorColor;
+          }
         }
       }
 

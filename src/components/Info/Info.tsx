@@ -4,6 +4,7 @@ import style from "./Info.module.scss"
 type InfoPropsType = {}
 
 export const Info = React.memo((props: InfoPropsType) => {
+
     return (
         <section className={style.infoBlock}>
             <div className={style.infoContainer}>

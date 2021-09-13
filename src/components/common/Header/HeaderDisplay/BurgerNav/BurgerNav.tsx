@@ -48,6 +48,7 @@ export const BurgerNav = React.memo((props: BurgerNavPropsType) => {
                     <div className={style.divBurgerNavItem}>
                         <NavLink
                             to={"/"}
+                            onClick={() => onNavItemClickHandler(false)}
                             className={pathname === "/"
                                 ? `${style.activeHeaderNavLink}`
                                 : `${style.headerNavLink}`}>

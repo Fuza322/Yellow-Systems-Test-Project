@@ -5,7 +5,7 @@ type DefaultButtonPropsType = DetailedHTMLProps<ButtonHTMLAttributes<HTMLButtonE
 
 type ButtonPropsType = DefaultButtonPropsType & {
     title: string
-    onClick: () => void
+    onClick?: () => void
     className?: string
 }
 

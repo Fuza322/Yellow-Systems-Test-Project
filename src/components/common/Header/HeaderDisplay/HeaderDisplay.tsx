@@ -25,7 +25,7 @@ export const HeaderDisplay = React.memo((props: HeaderDisplayPropsType) => {
     }, [dispatch])
 
     return (
-        <div className={(pathname.toLowerCase() === "/info" || pathname.toLowerCase() === "/contacts")
+        <div className={(pathname.toLowerCase() === "/info" || pathname.toLowerCase() === "/contacts" || pathname.toLowerCase() === "/empty")
             ? `${style.headerNavContainer} ${style.headerNavContainerFlexEnd}`
             : `${style.headerNavContainer}`}>
             {width >= 650

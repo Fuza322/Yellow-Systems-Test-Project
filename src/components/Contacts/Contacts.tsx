@@ -2,6 +2,7 @@ import React from "react"
 import style from "./Contacts.module.scss"
 
 export const Contacts = React.memo(() => {
+
     return (
         <section className={style.contactsBlock}>
             <div className={style.contactsContainer}>

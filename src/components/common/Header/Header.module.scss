@@ -17,6 +17,7 @@
     @include flexBox(row, center, center, nowrap);
     width: 147px;
     height: 56px;
+    cursor: pointer;
 
     @media only screen and (max-width: 650px) {
       width: 98px;
