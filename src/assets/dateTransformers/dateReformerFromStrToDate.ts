@@ -1,7 +1,4 @@
-import moment from "moment"
-
-export default function transformDateFromStrToNumber(date: string) {
-
+export default function transformDateFromStrToDate(date: string) {
     const modifiedDate = "".concat(
         date.slice(3, 5),
         ".",
@@ -9,6 +6,6 @@ export default function transformDateFromStrToNumber(date: string) {
         ".",
         date.slice(6, 10)
     )
-    return new Date(modifiedDate).getTime()
+    return new Date(modifiedDate)
 }
 

@@ -25,5 +25,9 @@
       border-radius: 11px;
       padding: 5px;
     }
+
+    .errorDateFilterInput {
+      border: 3px solid $redErrorColor;
+    }
   }
 }

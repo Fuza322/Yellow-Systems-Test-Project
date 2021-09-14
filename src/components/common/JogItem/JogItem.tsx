@@ -9,8 +9,6 @@ type JogItemPropsType = JogType
 
 export const JogItem = React.memo((props: JogItemPropsType) => {
 
-    console.log(props.date)
-
     return (
         <>
             <NavLink to={`/editjog/${props.id}/${props.distance}/${props.time}/${props.date}`}>
