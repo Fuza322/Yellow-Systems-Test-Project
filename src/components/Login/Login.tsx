@@ -8,9 +8,7 @@ import desktopLoginLogo from "../../assets/images/logo/loginLogo/desktopLoginLog
 import mobileLoginLogo from "../../assets/images/logo/loginLogo/mobileLoginLogo/bearFace.png"
 import style from "./Login.module.scss"
 
-type LoginPropsType = {}
-
-export const Login = React.memo((props: LoginPropsType) => {
+export const Login = React.memo(() => {
 
     const {width} = useWindowDimensions()
     const dispatch = useDispatch()

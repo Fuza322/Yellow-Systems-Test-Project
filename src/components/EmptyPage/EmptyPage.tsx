@@ -4,9 +4,7 @@ import {Button} from "../common/Buttons/Button/Button"
 import nothingIsThereImg from "../../assets/images/nothingIsThere/sad-rounded-square-emoticon.png"
 import style from "./EmptyPage.module.scss"
 
-type EmptyPagePropsType = {}
-
-export const EmptyPage = React.memo((props: EmptyPagePropsType) => {
+export const EmptyPage = React.memo(() => {
 
     const history = useHistory()
 

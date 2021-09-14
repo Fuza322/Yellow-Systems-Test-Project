@@ -11,9 +11,7 @@ import {ButtonAddItem} from "../common/Buttons/ButtonAddItem/ButtonAddItem"
 import {EmptyPage} from "../EmptyPage/EmptyPage"
 import style from "./Main.module.scss"
 
-type MainPropsType = {}
-
-export const Main = React.memo((props: MainPropsType) => {
+export const Main = React.memo(() => {
 
     const dispatch = useDispatch()
     const {jogs} = useSelector((state: AppRootStateType) => state.jogsReducer)

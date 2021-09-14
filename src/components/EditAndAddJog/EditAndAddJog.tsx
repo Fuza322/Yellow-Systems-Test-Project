@@ -9,7 +9,6 @@ import {Button} from "../common/Buttons/Button/Button"
 import {ButtonCancel} from "../common/Buttons/ButtonCancel/ButtonCancel"
 import style from "./EditAndAddJog.module.scss"
 
-
 type FormikErrorType = {
     distance?: string
     time?: string

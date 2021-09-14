@@ -4,7 +4,6 @@ import {useSelector, useDispatch} from "react-redux"
 import {AppRootStateType} from "../../../redux/store"
 import {setFilterButtonStatus} from "../../../redux/reducers/app-reducer"
 import {HeaderDisplay} from "./HeaderDisplay/HeaderDisplay"
-import {DateFilter} from "../DateFilter/DateFilter"
 import headerLogo from "../../../assets/images/logo/headerLogo/whiteHeaderLogo/logo.png"
 import style from "./Header.module.scss"
 
@@ -42,7 +41,6 @@ export const Header = React.memo((props: HeaderPropsType) => {
                     onClickFilterButton={onFilterButtonClickHandler}
                 />}
             </header>
-            {/*{isActiveFilterButton && <DateFilter/>}*/}
         </>
     )
 })
