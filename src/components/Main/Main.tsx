@@ -4,6 +4,7 @@ import {useDispatch, useSelector} from "react-redux"
 import {setFilterButtonStatus} from "../../redux/reducers/app-reducer"
 import {fetchJogsTC} from "../../redux/reducers/jogs-reducer"
 import {AppRootStateType} from "../../redux/store"
+import {DateFilter} from "../common/DateFilter/DateFilter"
 import {JogItem} from "../common/JogItem/JogItem"
 import {ButtonAddItem} from "../common/Buttons/ButtonAddItem/ButtonAddItem"
 import {EmptyPage} from "../EmptyPage/EmptyPage"
@@ -15,6 +16,7 @@ export const Main = React.memo((props: MainPropsType) => {
 
     const dispatch = useDispatch()
     const {jogs} = useSelector((state: AppRootStateType) => state.jogsReducer)
+    const {isActiveFilterButton} = useSelector((state: AppRootStateType) => state.appReducer)
     const history = useHistory()
 
     useEffect(() => {
@@ -28,6 +30,7 @@ export const Main = React.memo((props: MainPropsType) => {
 
     return (
         <>
+            {isActiveFilterButton && <DateFilter/>}
             {(jogs && jogs.length)
                 ? <section className={style.mainBlock}>
                     <div className={style.mainContainer}>

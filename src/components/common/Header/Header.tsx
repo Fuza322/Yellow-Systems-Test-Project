@@ -42,7 +42,7 @@ export const Header = React.memo((props: HeaderPropsType) => {
                     onClickFilterButton={onFilterButtonClickHandler}
                 />}
             </header>
-            {isActiveFilterButton && <DateFilter/>}
+            {/*{isActiveFilterButton && <DateFilter/>}*/}
         </>
     )
 })

@@ -33,18 +33,18 @@ export const HeaderDisplay = React.memo((props: HeaderDisplayPropsType) => {
                     <Navbar
                         onNavItemClick={onNavItemClickHandler}
                     />
-                    {(pathname.toLowerCase() === "/editjog" || pathname.toLowerCase() === "/addjog" || pathname === "/")
+                    {(pathname.toLowerCase().slice(0, 8) === "/editjog" || pathname.toLowerCase() === "/addjog" || pathname === "/")
                     && <ButtonFilter
                         isActiveButton={props.isActiveFilterButton}
-                        disabled={(pathname.toLowerCase() === "/editjog" || pathname.toLowerCase() === "/addjog")}
+                        disabled={(pathname.toLowerCase().slice(0, 8) === "/editjog" || pathname.toLowerCase() === "/addjog")}
                         onClick={props.onClickFilterButton}
                     />}
                 </>
                 : <>
-                    {(pathname.toLowerCase() === "/editjog" || pathname.toLowerCase() === "/addjog" || pathname === "/")
+                    {(pathname.toLowerCase().slice(0, 8) === "/editjog" || pathname.toLowerCase() === "/addjog" || pathname === "/")
                     && <ButtonFilter
                         isActiveButton={props.isActiveFilterButton}
-                        disabled={(pathname.toLowerCase() === "/editjog" || pathname.toLowerCase() === "/addjog")}
+                        disabled={(pathname.toLowerCase().slice(0, 8) === "/editjog" || pathname.toLowerCase() === "/addjog")}
                         onClick={props.onClickFilterButton}
                     />}
                     <BurgerNav

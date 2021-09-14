@@ -1,13 +1,14 @@
 import React, {useCallback} from "react"
 import {useHistory, useParams} from "react-router-dom"
 import {useFormik} from "formik"
-import moment from "moment"
 import {useDispatch, useSelector} from "react-redux"
 import {AppRootStateType} from "../../redux/store"
 import {addJogTC, updateJogTC} from "../../redux/reducers/jogs-reducer"
+import transformDateFromNumberToStr from "../../assets/dateTransformers/dateReformerFromNumberToStr"
 import {Button} from "../common/Buttons/Button/Button"
 import {ButtonCancel} from "../common/Buttons/ButtonCancel/ButtonCancel"
 import style from "./EditAndAddJog.module.scss"
+
 
 type FormikErrorType = {
     distance?: string
@@ -33,7 +34,7 @@ export const EditAndAddJog = React.memo((props: EditAndAddJogPropsType) => {
         initialValues: {
             distance: distance ? distance : "",
             time: time ? time : "",
-            date: date ? moment(Number(date)).format("L").toString() : ""
+            date: date ? transformDateFromNumberToStr(Number(date)) : ""
         },
         validate: (values) => {
             const errors: FormikErrorType = {}
@@ -56,7 +57,7 @@ export const EditAndAddJog = React.memo((props: EditAndAddJogPropsType) => {
             return errors
         },
         onSubmit: (values) => {
-            if(id && distance && time && date) {
+            if (id && distance && time && date) {
                 dispatch(addJogTC(values.date, Number(values.time), Number(values.distance)))
             } else {
                 dispatch(updateJogTC(values.date, Number(values.time), Number(values.distance), Number(id), user_id))
